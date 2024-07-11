@@ -1,0 +1,6 @@
+<app-filter [all]="totalCount" [instock]="instock" [outstock]="outstock" (selectedEvent)="OnFilterChange($event)"></app-filter>
+<div class="ekart--products--container">
+    <div *ngFor="let i of products">
+        <app-product *ngIf="selectedFilteris === 'all' || i.is_in_inventory.toString() === selectedFilteris" [product]="i"></app-product>
+    </div>
+</div>

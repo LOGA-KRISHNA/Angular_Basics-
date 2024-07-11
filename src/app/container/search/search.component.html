@@ -1,0 +1,9 @@
+
+<div class="input-group p-3">
+    <input [value]="text" [(ngModel)]="text" type="search" class="form-control rounded " placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+    <button type="button" [disabled]="!text" [ngClass]="{'btn':true, 'btn-secondary':text, 'btn-secondary-enabled':!text}" >search</button>
+</div>
+<div>
+    <p *ngIf="text!=''">Search Results: <strong>{{text}}</strong></p>
+</div>
+
