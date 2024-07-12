@@ -21,10 +21,10 @@ export class FilterComponent {
   
   selectedbutton:string='all';
 
-  @Output()
-  selectedEvent:EventEmitter<string>=new EventEmitter<string>();
+  @Output() selectedEvent=new EventEmitter<string>();
   
-  eventemmitted(){
+  eventemmitted(selectedbutton:string){
+    this.selectedbutton=selectedbutton;
     console.log(this.selectedbutton+" from child");
     
     this.selectedEvent.emit(this.selectedbutton);

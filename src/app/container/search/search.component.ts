@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-search',
@@ -11,5 +11,12 @@ import { FormsModule } from '@angular/forms';
 export class SearchComponent {
 
   text:string="";
+  @Output() onsearchTextEmmiter:EventEmitter<string>=new EventEmitter<string>();
+
+  textUpdating(){
+    this.onsearchTextEmmiter.emit(this.text); 
+    //console.log("child emmited "+this.text);
+    
+  }
 
 }

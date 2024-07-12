@@ -1,4 +1,4 @@
 <div>
-    <app-search></app-search>
+    <app-search (onsearchTextEmmiter)="searchedTextFun($event)"></app-search>
 </div>
-<app-product-list></app-product-list>
+<app-product-list [searchText]="searchedText"></app-product-list>

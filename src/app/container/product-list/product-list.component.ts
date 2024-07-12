@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProductComponent } from "./product/product.component";
 import { FilterComponent } from "./filter/filter.component";
 
@@ -546,9 +546,12 @@ export class ProductListComponent {
 
   selectedFilteris:string="";
 
-  OnFilterChange(value: string) {
-      this.selectedFilteris=value;
-      console.log("Receeived");
+  OnFilterChange(event: string) {
+      this.selectedFilteris=event;
+      console.log(event+" parent Receeived ");
       
     }
+
+    @Input() searchText:string="";
+
 }

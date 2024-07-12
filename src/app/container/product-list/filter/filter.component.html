@@ -1,12 +1,12 @@
 <div class="filter-container">
     <span>Filter: </span>
     
-    <input type="radio" name="filter" value="all" [(ngModel)]="selectedbutton" (click)="eventemmitted()"/>
+    <input type="radio" name="filter" value="all" [(ngModel)]="selectedbutton" (click)="eventemmitted('all')"/>
     <span>all({{all}})</span>
 
-    <input type="radio" name="filter" value="true" [(ngModel)]="selectedbutton" (click)="eventemmitted()"/>
+    <input type="radio" name="filter" value="true" [(ngModel)]="selectedbutton" (click)="eventemmitted('true')"/>
     <span>In Stock({{instock}})</span>
 
-    <input type="radio" name="filter" value="false" [(ngModel)]="selectedbutton" (click)="eventemmitted()"/>
+    <input type="radio" name="filter" value="false" [(ngModel)]="selectedbutton" (click)="eventemmitted('false')"/>
     <span>{{'Out Of Stock('+outstock+')'}}</span>
 </div>

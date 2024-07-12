@@ -13,4 +13,13 @@ import { ProductListComponent } from "./product-list/product-list.component";
 })
 export class ContainerComponent {
    name:string="loga";
+
+   searchedText:string="";
+
+   searchedTextFun(event:string){
+    //console.log(event);
+    
+    this.searchedText=event;
+   }
+   
 }
