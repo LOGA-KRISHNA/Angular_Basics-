@@ -1,9 +1,18 @@
 <app-filter [all]="totalCount" [instock]="instock" [outstock]="outstock" (selectedEvent)="OnFilterChange($event)"></app-filter>
 <div class="ekart--products--container">
 <!--*ngIf="selectedFilteris === 'all' || i.is_in_inventory.toString() === selectedFilteris"-->
-    <div *ngFor="let i of products">
-        @if (selectedFilteris === 'all' || i.is_in_inventory.toString() === selectedFilteris) {
-        <app-product  [product]="i" *ngIf="searchText==='' || i.name.toLowerCase().includes(searchText)"></app-product>
+    @for (i of products; track $index) {
+        @if (selectedFilteris === '' || selectedFilteris === 'all' || i.is_in_inventory.toString() === selectedFilteris) {
+        <app-product  [product]="i" *ngIf="searchText==='' || i.name.toLowerCase().includes(searchText)" (click)="selctedProduct=i"></app-product>
         }
-    </div>
+    }
 </div>
+
+<!-- "Old method of ng-container for not creating several div's"
+    <ng-container *ngFor="let i of products" >
+        @if (selectedFilteris === '' || selectedFilteris === 'all' || i.is_in_inventory.toString() === selectedFilteris) {
+        <app-product  [product]="i" *ngIf="searchText==='' || i.name.toLowerCase().includes(searchText)" (click)="selctedProduct=i"></app-product>
+        }
+    </ng-container>
+
+-->

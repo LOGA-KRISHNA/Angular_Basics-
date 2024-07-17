@@ -1,4 +1,5 @@
 <div>
     <app-search (onsearchTextEmmiter)="searchedTextFun($event)"></app-search>
+    <app-product-list [searchText]="searchedText" #productListcurr></app-product-list>
+    <product-detail *ngIf="productListcurr.selctedProduct" [productListComp]="productListcomponent"></product-detail>
 </div>
-<app-product-list [searchText]="searchedText"></app-product-list>

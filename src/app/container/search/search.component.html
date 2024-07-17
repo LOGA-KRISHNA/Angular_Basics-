@@ -7,3 +7,21 @@
     <p *ngIf="text!=''">Search Results: <strong>{{text}}</strong></p>
 </div>
 
+<!--
+    "Template Reference variable"
+    
+<div class="input-group p-3">
+    <input #searchtext type="search" class="form-control rounded " placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+    <button type="button" (click)="searched(searchtext)" [disabled]="!text"  [ngClass]="{'btn':true, 'btn-secondary':text, 'btn-secondary-enabled':!text}" >search</button>
+</div>
+<div>
+    <p *ngIf="text!=''">Search Results: <strong>{{text}}</strong></p>
+</div>
+
+/*
+    
+
+*/
+
+
+-->

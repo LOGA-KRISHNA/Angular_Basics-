@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ProductComponent } from "./product/product.component";
 import { FilterComponent } from "./filter/filter.component";
+import { Product } from '../../Models/Products';
 
 @Component({
   selector: 'app-product-list',
@@ -12,7 +13,7 @@ import { FilterComponent } from "./filter/filter.component";
 })
 export class ProductListComponent {
 
-
+  selctedProduct:Product;
    products = [
     {
       id: 1,
